@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+    <style>
+        body{
+            background-color: aqua;
+            padding: 50px 100px;
+
+        }
+        h1{
+            text-align: center;
+        }
+        #container{
+            text-align: center;
+            background-color: #1abc1a;
+            padding: 50px;
+        }
+        .input-div{
+            display: inline-block;
+        }
+        .inp{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            /* width: 250px; */
+        }
+        label{
+            font-size: 22px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature converter</h1>
+    <div id="container">
+        <div class="input-div">
+            <label >celsius</label><br>
+        <input type="number" value="0" id="cel" class="inp"> 
+        </div>
+        <div class="input-div">
+     <label >fahernheit</label><br>
+        <input type="number" value="32" id="fah" class="inp">
+        </div>
+    </div>
+    <script>
+
+        let celsius = document.getElementById('cel');
+    let fahrenheit = document.getElementById('fah');
+    celsius.oninput = function () {
+        let f = (parseFloat(celsius.value) * 9) / 5 + 32;
+        fahrenheit.value = parseFloat(f.toFixed(2));
+      
+    }
+    fahrenheit.oninput = function () {
+        let c = ((parseFloat(
+            fahrenheit.value) - 32) * 5) / 9;
+        celsius.value = parseFloat(c.toFixed(2));
+      
+    }
+   
+    </script>
+</body>
+</html>
